@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romina & Juan Esteban - Boda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Italianno&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-burgundy: #4a121a;
+            --bg-cream: #f9f6f0;
+            --green-olive: #556b2f;
+            --green-accent: #6b7a59;
+            --gold-accent: #c5a059;
+            --text-dark: #2b2b2b;
+            --text-light: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .phone-wrapper {
+            width: 100%;
+            max-width: 430px;
+            background-color: var(--bg-cream);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hero / Cover Section */
+        .hero {
+            position: relative;
+            background-color: var(--bg-burgundy);
+            color: var(--text-light);
+            text-align: center;
+            padding: 50px 20px 40px 20px;
+            border-bottom: 3px solid var(--gold-accent);
+        }
+
+        .location-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .names {
+            font-family: 'Italianno', cursive;
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: var(--gold-accent);
+            display: block;
+            margin: -5px 0;
+        }
+
+        .date-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            color: #e5d3b3;
+        }
+
+        /* Image Carousel / Photo display */
+        .photo-container {
+            width: 100%;
+            padding: 20px;
+            background-color: var(--bg-cream);
+            text-align: center;
+        }
+
+        .photo-card {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 4px solid #ffffff;
+            object-fit: cover;
+            max-height: 450px;
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            background-color: var(--green-olive);
+            color: var(--text-light);
+            padding: 30px 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .countdown-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #e2e8d8;
+        }
+
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .count-box {
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 15px;
+            border-radius: 6px;
+            min-width: 70px;
+        }
+
+        .count-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .count-lbl {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d1dcc4;
+            margin-top: 4px;
+        }
+
+        /* Details Section */
+        .details-section {
+            padding: 30px 25px;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--bg-burgundy);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: var(--gold-accent);
+            margin: 15px auto 25px auto;
+        }
+
+        .event-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--bg-burgundy);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .event-type {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--bg-burgundy);
+        }
+
+        .event-time {
+            font-size: 0.85rem;
+            color: var(--green-accent);
+            font-weight: 500;
+            margin: 5px 0 10px 0;
+        }
+
+        .event-venue {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+
+        .btn-map {
+            background-color: transparent;
+            color: var(--green-olive);
+            border: 1px solid var(--green-olive);
+        }
+
+        .btn-map:hover {
+            background-color: var(--green-olive);
+            color: #ffffff;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            font-weight: 600;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+        }
+
+        .footer {
+            background-color: var(--bg-burgundy);
+            color: #e5d3b3;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-wrapper">
+        <!-- Banner Superior / Encabezado -->
+        <div class="hero">
+            <div class="location-tag">QUITO — ECUADOR</div>
+            <div class="names">
+                Romina
+                <span class="ampersand">&</span>
+                Juan Esteban
+            </div>
+            <div class="date-main">14 DE AGOSTO, 2027</div>
+        </div>
+
+        <!-- Foto de los novios -->
+        <div class="photo-container">
+            <!-- Reemplazar 'foto_novios.jpg' con la imagen real de la pareja -->
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Romina y Juan Esteban" class="photo-card">
+        </div>
+
+        <!-- Contador Regresivo -->
+        <div class="countdown-section">
+            <div class="countdown-title">Faltan para el gran día</div>
+            <div class="countdown-grid">
+                <div class="count-box">
+                    <div class="count-num" id="days">00</div>
+                    <div class="count-lbl">Días</div>
+                </div>
+                <div class="count-box">
+                    <div class="count-num" id="hours">00</div>
+                    <div class="count-lbl">Horas</div>
+                </div>
+                <div class="count-box">
+                    <div class="count-num" id="minutes">00</div>
+                    <div class="count-lbl">Minutos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detalles del Evento -->
+        <div class="details-section">
+            <div class="section-title">Dónde y Cuándo</div>
+            <div class="divider"></div>
+
+            <div class="event-card">
+                <div class="event-type">Ceremonia & Recepción</div>
+                <div class="event-time">SÁBADO 14 DE AGOSTO DE 2027 — 16:00 HRS</div>
+                <div class="event-venue">
+                    <strong>[Nombre de la Quinta o Iglesia]</strong><br>
+                    Quito, Ecuador
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-map">Ver Ubicación en Mapa</a>
+            </div>
+
+            <!-- Confirmación por WhatsApp -->
+            <div style="margin-top: 35px;">
+                <div class="section-title" style="font-size: 1.3rem;">Confirmación de Asistencia</div>
+                <p style="font-size: 0.85rem; color: #666; margin: 10px 0 20px 0;">
+                    Agradecemos confirmar tu asistencia lo antes posible para organizar cada detalle.
+                </p>
+                
+                <!-- IMPORTANTE: Cambiar el número '593900000000' por el WhatsApp de la novia -->
+                <a href="https://wa.me/593900000000?text=¡Hola%20Romina!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Romina%20y%20Juan%20Esteban." target="_blank" class="btn btn-whatsapp">
+                    Confirmar por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Cierre / Footer -->
+        <div class="footer">
+            ¡Los esperamos en Quito para celebrar juntos!
+        </div>
+    </div>
+
+    <!-- Script de la cuenta regresiva -->
+    <script>
+        const weddingDate = new Date(2027, 7, 14, 16, 0, 0).getTime(); // 14 de Agosto de 2027
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+        }, 1000);
+    </script>
+</body>
+</html>
